@@ -9,6 +9,12 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class SftInfrastructureTest(unittest.TestCase):
+    def test_script_uses_a_cuda_12_compatible_torch_index(self) -> None:
+        script = (ROOT / "train_sft.py").read_text()
+
+        self.assertIn('torch = { index = "pytorch-cu126" }', script)
+        self.assertIn('url = "https://download.pytorch.org/whl/cu126"', script)
+
     def test_training_config_uses_warmup_steps(self) -> None:
         tree = ast.parse((ROOT / "train_sft.py").read_text())
         sft_config = next(

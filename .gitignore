@@ -2,5 +2,7 @@
 __pycache__/
 *.py[cod]
 .env
+github_runpod_ed25519
+github_runpod_ed25519.pub
 outputs/
 workspaces/

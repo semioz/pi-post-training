@@ -762,7 +762,7 @@ def train(examples: list[dict[str, Any]], processor: Any, stats: ConversionStats
         bf16=args.bf16,
         optim=optim,
         lr_scheduler_type="cosine",
-        warmup_ratio=0.03,
+        warmup_steps=max(1, round(args.max_steps * 0.03)),
         report_to="trackio",
         run_name=args.run_name,
         push_to_hub=args.push_to_hub,

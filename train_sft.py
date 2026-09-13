@@ -11,14 +11,6 @@
 #   "transformers>=5.11.0",
 #   "trl>=1.6.0",
 # ]
-#
-# [tool.uv.sources]
-# torch = { index = "pytorch-cu126" }
-#
-# [[tool.uv.index]]
-# name = "pytorch-cu126"
-# url = "https://download.pytorch.org/whl/cu126"
-# explicit = true
 # ///
 
 """SFT Gemma 4 E2B-it on badlogicgames/pi-mono coding-agent traces.
